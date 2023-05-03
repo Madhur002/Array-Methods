@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indirect Recursion</title>
+</head>
+<body>
+    <script>
+
+        function buyApple(amount, x) {
+            if (amount > 0) {
+                buyMoreApple(amount,x);
+                x++;
+            }
+            else {
+                console.log(`Total apple purchased are ${x}`);
+            }
+        }
+
+        function buyMoreApple(amount,x) {
+            if (amount >= 35){
+                amount = amount-35;
+                x++;
+                console.log(`Total amount left is ${amount} and apple purchase is ${x}`);
+                buyApple(amount,x);
+                return amount;
+            }
+        }
+
+        const money = 100;
+        let count = 0;
+        console.log(`Total amount is ${money} and one apple cost is ${35} Rs`)
+        let newFunction = buyApple(money,count);
+    </script>
+</body>
+</html>
