@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting An Array</title>
+  
+  </head>
+  <body style="text-align: center; margin-top:200px;">
+    <h1 style="margin-top: 0;">Sorting An Array</h1>
+    <h2>Unsorted Array</h2>
+    <h3 id="unsortedArray"></h3>
+    <h2>Sorted Array</h2>
+    <h3 id="sortedArray"></h3>
+    <script>
+        let data = [5, 3, 7,43,232,54, 32, 78, 23];
+        console.log("This is the Unsorted array");
+      //   document.write(`${data} <br>`)
+      var heading = document.getElementById('unsortedArray');
+        heading.innerHTML = data.join(", ");;
+        heading.innerHTML;
+        console.log(data)
+        for (let i = 0; i < data.length; i++) {
+          for (let j = 0; j < data.length; j++) {
+            if (data[j] > data[j + 1]) {
+              let temp = data[j];
+              data[j] = data[j + 1];
+              data[j + 1] = temp;
+          }
+      }
+        }
+        console.log("This is the sorted array");
+        console.log(data);
+        console.log("Length of the array is");
+        console.log(data.length);
+        let newheading = document.getElementById('sortedArray');
+        newheading.innerHTML = data.join(", ");;
+        newheading.innerHTML;
+      </script>
+  </body>
+</html>

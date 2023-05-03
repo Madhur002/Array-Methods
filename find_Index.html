@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>findingIndex</title>
+    <script>
+        const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.warn(data);
+      const findIndex = () => {
+        let item = document.getElementById("element").value;
+        item = parseInt(item);
+        let index = undefined;
+        for (let i = 0; i <= data.length - 1; i++) {
+          if (data[i] === item) {
+            index = i;
+            break;
+          }
+        }
+        console.warn(index);
+      };
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="enter the element" id="element" />
+    <button onclick="findIndex()">Find index</button>
+  </body>
+</html>

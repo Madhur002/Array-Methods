@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let data = [1,2,3,5,4,3,3,35];
+        // let el = 70;
+        // let position = 2;
+        // console.warn(data)
+        // for ( let i = data.length-1 ; i>=0 ; i--) {
+        //     // console.warn(data[i])/
+        //     if (i>=position)
+        //     {
+        //         data[i+1] = data[i];
+        //         if (i==position){
+        //             data[i] = el;
+        //         }
+        //     }
+        // }
+        // console.warn(data)    
+
+        const inserIntoArray = () => {
+            let data = [2,3,44,56,75,7,78,88,84];
+            let position = document.getElementById('position').value;
+            let el = document.getElementById('element').value;
+            el = parseInt(el);
+
+            for ( let i = data.length-1 ; i>=0 ; i--) {
+            // console.warn(data[i])/
+            if (i>=position)
+            {
+                data[i+1] = data[i];
+                if (i==position){
+                    data[i] = el;
+                }
+            }
+            else {
+                console.log('please enter valid data')
+            }
+        }
+        console.warn(data)
+        }
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="enter the position" name="position" id="position">
+    <input type="text" placeholder="enter the value" name="element" id="element">
+    <button onClick="inserIntoArray()">click</button>
+</body>
+</html>
