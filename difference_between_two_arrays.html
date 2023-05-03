@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Difference_between_two_arrays</title>
+  </head>
+  <body>
+    <h1>Difference_between_two_arrays</h1>
+    <script>
+      let array1 = [1, 2, 3, 8];
+      let array2 = [3, 2, 18, 89];
+      let array3 = [];
+      for (let i = 0; i < array1.length; i++) {
+        for (let j = i; j < array2.length; j++) {
+          if (array1[i] !== array2[i]) {
+            array3.push(array2[i]);
+          }
+        }
+      }
+      console.log(array1, array2, array3);
+    </script>
+  </body>
+</html>

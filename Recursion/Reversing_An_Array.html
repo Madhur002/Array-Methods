@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reversing An Array</title>
+  </head>
+  <body>
+    <script>
+      let data = [1, 2, 3, 4];
+      const ReverseArray = (data, start, end) => {
+        console.log(data);
+        if (start <= end) {
+          let temp = data[start];
+          data[start] = data[end];
+          data[end] = temp;
+          return ReverseArray(data, start + 1, end - 1);
+        }
+      };
+      ReverseArray(data, 0, data.length - 1);
+    </script>
+  </body>
+</html>
