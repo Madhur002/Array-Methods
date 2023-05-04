@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating a Stack</title>
+  </head>
+  <body style="text-align: center;">
+    <h1>Stack Operations</h1>
+    <h2 id="stack"></h2>
+    <input type="text" id="input" placeholder="enter the element" />
+    <button onclick="push()">Push</button>
+    <button onclick="pop()">Pop</button>
+    <script>
+      let stack = [];
+      let currentSize = stack.length;
+      let maxLength = 10;
+
+      function push() {
+        let newValue = document.getElementById("input").value;
+        if (currentSize < maxLength) {
+          stack[currentSize] = newValue;
+          currentSize++;
+          updateStackDisplay();
+        } else {
+          alert("You are adding more than the max length");
+        }
+      }
+
+      function pop() {
+        if (currentSize > 0) {
+          currentSize -= 1;
+          stack.length = currentSize;
+          updateStackDisplay();
+        } else {
+          alert("Stack is empty");
+        }
+      }
+
+      function updateStackDisplay() {
+        let stack2 = document.getElementById("stack");
+        stack2.innerHTML =
+          currentSize > 0
+            ? stack.join(", ")
+            : "Stack is empty 'Try adding one element using push'";
+      }
+
+      updateStackDisplay();
+    </script>
+  </body>
+</html>
